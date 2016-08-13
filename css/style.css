@@ -1,12 +1,529 @@
-body {
-  min-width: 960px;
-  margin: 0;
+﻿body {
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 0;
+  
   font-family: "Cuprum", "Arial", sans-serif;
   font-size: 14px;
-  line-height: 24px;
+  line-height: 18px;
   font-weight: 400;
+  color: #32425c;
 }
 
+@font-face {
+  font-family: 'fontello';
+  src: url('../fonts/fontello/font/fontello.eot?42563023');
+  src: url('../fonts/fontello/font/fontello.eot?42563023#iefix') format('embedded-opentype'),
+       url('../fonts/fontello/font/fontello.woff2?42563023') format('woff2'),
+       url('../fonts/fontello/font/fontello.woff?42563023') format('woff'),
+       url('../fonts/fontello/font/fontello.ttf?42563023') format('truetype'),
+       url('../fonts/fontello/font/fontello.svg?42563023#fontello') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'fontello';
+    src: url('../font/fontello.svg?42563023#fontello') format('svg');
+  }
+}
+*/
+ 
+ [class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+ 
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+ 
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+ 
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+ 
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+ 
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+ 
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+ 
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+ 
+.icon-up-dir:before { content: '\e500'; } /* '' */
+.icon-down-dir:before { content: '\e501'; } /* '' */
+.icon-search:before { content: '\e800'; } /* '' */
+.icon-bookmark:before { content: '\e801'; } /* '' */
+.icon-basket:before { content: '\e802'; } /* '' */
+.icon-phone:before { content: '\e803'; } /* '' */
+.icon-login:before { content: '\e804'; } /* '' */
+.icon-user:before { content: '\e805'; } /* '' */
+.icon-home:before { content: '\e806'; } /* '' */
+.icon-check:before { content: '\e807'; } /* '' */
+.icon-check-empty:before { content: '\f096'; } /* '' */
+
 q {
-  quotes: "\00ab" "\00bb"; 	
+  quotes: "\00ab" "\00bb";
+}
+
+.container {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/*Стили хедера*/
+header {
+  background-color: #f1f5f7;
+}
+
+.info-order-menu {
+  padding-left: 130px;
+  background-color: #293449;
+}
+
+.technomart-logo {
+  float: left;
+  width: 220px;
+  padding: 13px 0;
+  font-size: 24px;
+  line-height: 24px;
+  color: #ffffff;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  background-color: #ee3643;
+  box-shadow: inset 0 -5px rgba(0, 0, 0, 0.24);
+}
+
+.info-order-form {
+  font-size: 17px;
+  line-height: 18px;
+  color: #ffffff;	
+}
+
+.info-order-form label {
+  padding: 12px 15px;
+  padding-right: 0;	
+}
+
+.info-order-form [class^="icon"] {
+  margin-right: 10px;
+  opacity: 0.3;
+}
+
+.info-order-form input {
+  background-color: transparent;
+  border: none;	
+}
+
+.info-order-form .search-field {
+  width: 165px;	
+}
+
+.info-order-form .bookmark-field,
+.info-order-form .basket-field {
+  width: 27px;
+  color: #ffffff;	
+}
+
+.info-order-form .order-field {
+  margin-left: 10px;
+  padding: 12px 20px;
+  color: #ffffff;
+  background-color: #63a63e;
+  border: none;
+}
+
+.connection {
+  padding: 0 130px;
+  padding-top: 47px;
+  font-size: 0;
+  text-align: right;	
+}
+
+.connection-info {
+  display: inline-block;
+  width: 200px;
+  margin: 0;
+  vertical-align: top;
+  font-style: italic;
+  font-size: 16px;
+  line-height: 23px;
+  color: #ee3643;
+  text-align: left;
+}
+
+.connection-office {
+  display: inline-block;
+  margin-left: 68px;
+  width: 270px;
+  vertical-align: top;
+}
+
+.connection-office .phone {
+  margin: 0;
+  padding: 8px 9px;
+  font-size: 21px;
+  line-height: 21px;
+  color: #e92920;
+  text-align: left;
+  border: 3px solid #ffffff;
+}
+
+.connection-office .icon-phone {
+  margin-right: 32px;
+  color: #000000;
+  opacity: 0.3;	
+}
+
+.connection-office .address {
+  margin: 0;
+  margin-top: 8px;
+  font-size: 14px;
+  line-height: 14px;
+  text-align: center;
+}
+
+.connection-user {
+  display: inline-block;
+  width: 280px;
+  margin-left: 70px;
+}
+
+.user-entry,
+.user-registration {
+  font-size: 21px;
+  line-height: 21px;
+  color: #000000;
+  text-decoration: none;
+  background-color: #ffffff;	
+}
+
+.user-entry {
+  float: left;
+  padding: 10px;
+  padding-right: 20px;	
+}
+
+.user-registration {
+  float: right;
+  padding: 10px 23px;	
+}
+
+.user-entry .icon-login {
+  margin-right: 9px;
+  opacity: 0.3;
+}
+
+.header-main-menu {
+  margin: 0 130px;
+  margin-top: 42px;
+  margin-bottom: 60px;
+  text-align: center;
+  background-color: #32425c;
+}
+
+.header-main-menu ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0;	
+}
+
+.header-main-menu li {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 17px;
+  line-heigh: 17px;
+}
+
+.header-main-menu a {
+  display: block;
+  padding: 20px 30px;
+  color: #ffffff;
+  text-decoration: none;
+  background-color: #32425c;
+  box-shadow: inset 0 -5px #293449;	
+}
+
+/*Cтили раздела .promo*/
+.promo {
+  margin: 0 130px;
+  margin-top: 60px;
+  background-color: #ffffff;
+}
+
+.promo-slider {
+  position: relative;
+  float: left;
+  width: 620px;
+  height: 266px;
+  box-sizing: border-box;
+  color: #ffffff;
+}
+
+.promo-slider h2 {
+  margin: 0;
+  padding: 0;
+  padding: 5px 0;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 36px;
+  text-transform: uppercase;
+}
+
+.promo-slider p {
+  margin: 0;
+  padding: 0;
+  font-family: "PT Sans", "Arial", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line=height: 24px;
+}
+
+.promo-slide-1,
+.promo-slide-2 {
+  height: 266px;
+  box-sizing: border-box;
+  padding-top: 17px;
+  padding-left: 25px;
+}
+
+.promo-slide-1 {
+  background: url("../img/worker-perforator.jpg") no-repeat #663300;	
+}
+
+.promo-slide-2 {
+  display: none;
+  background: url("../img/worker-drill.jpg") no-repeat #663300;	
+}
+
+.main-btn {
+  display: block;
+  padding: 9px 48px;
+  color: #ffffff;
+  font-size: 14px;
+  line-hight: 18px;
+  text-decoration: none;
+  text-transform: uppercase;
+  background-color: #ee3643;	
+}
+
+.promo-slider .main-btn {
+  position: absolute;
+  left: 25px;
+  bottom: 22px;	
+}
+
+.promo-slider input {
+  display: none;	
+}
+
+.promo-block {
+  width: 300px;
+  height: 124px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  padding: 20px 22px;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 30px;
+}
+
+.promo-block p {
+  margin: 0;
+  margin-bottom: 15px;
+  padding: 0;	
+}
+
+.promo-btn {
+  display: block;
+  width: 135px;
+  height: 37px;
+  box-sizing: border-box;
+  margin-left: 4px;
+  color: #ffffff;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 37px;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  text-transform: uppercase;
+  background-color: rgba(0, 0, 0, 0.1);  
+  border-radius: 3px;	
+}
+
+.promo-materials {
+  float: left;
+  margin-right: 20px;
+  background: url("../img/icon-materials.png") 212px 33px no-repeat #f6b22d; 
+}
+
+.promo-instrument {
+  float: left;
+  background: url("../img/icon-instrument.png") 197px 33px no-repeat #4aafd3; 
+}
+
+.promo-technics {
+  float: right;
+  background: url("../img/icon-technics.png") 190px 33px no-repeat #cc79d1; 
+}
+
+.promo-discount {
+  float: right;
+  background: url("../img/icon-discount.png") 195px 27px no-repeat #85d179; 
+}
+
+.promo-delivery {
+  float: right;
+  background: url("../img/icon-delivery.png") 192px 33px no-repeat #f6b22d; 
+}
+
+
+/*Стили раздела .popular-products*/
+.popular-products {
+  margin-top: 30px;
+  padding: 0 130px;
+}
+
+.popular-header {
+  padding: 30px 25px;
+  background-color: #f7f3ec;	
+}
+
+.popular-header h2 {
+  display: inline-block;
+  margin: 0;
+  font-size: 30px;
+  line-height: 30px;
+  text-transform: uppercase;
+}
+
+.popular-header .main-btn {
+  float: right;
+  width: 252px;
+  box-sizing: border-box;
+  margin-top: -4px;
+  padding: 9px 0;
+  line-height: 18px;
+  text-align: center;
+}
+
+.catalog-item {
+  display: inline-block;
+  width: 218px;
+  min-height: 317px;
+  vertical-align: top;
+  margin-top: 20px;
+  margin-right: 16px;
+  text-align: center;
+  border: 1px solid #e5e5e5;	
+}
+
+.catalog-item:nth-child(4n+1) {
+  margin-right: 0;	
+}
+
+.catalog-item .buy-form {
+  display: none;	
+}
+
+.catalog-item p {
+  margin: 0;
+  padding: 10px 23px;
+  font-family: "PT Sans", "Arial", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 20px;
+  color: #000000;
+}
+
+.catalog-item .catalog-old-price {
+  min-height: 24px;
+  padding: 2px 23px;
+  font-size: 17px;
+  line-height: 18px;
+  color: #999999;
+  text-decoration: line-through;
+  text-transform: uppercase;
+}
+
+.catalog-item .catalog-price {
+  position: relative;
+  width: 120px;
+  margin: 0 auto;
+  padding: 10px;
+  font-size: 17px;
+  line-height: 18px;
+  color: #ffffff;
+  text-transform: uppercase;
+  background-color: #ee3643;
+}
+
+.catalog-price::after {
+  position: absolute;
+  top: 0;
+  right: -18px;
+  content: "";
+  width: 0;
+  height: 0;
+  border: 20px solid #ffffff;
+  border-left-color: #ee3643;
+}
+
+.popular-brends {
+  margin-top: 19px;
+  padding: 0 130px;
+}
+
+.brend-item {
+  display: inline-block;
+  width: 220px;
+  min-height: 143px;
+  box-sizing: border-box;
+  margin-top: 20px;
+  margin-right: 16px;
+  text-align: center;
+  line-height: 143px;
+  vertical-align: top;
+  border: 1px solid #e7e7e7;
+}
+
+.brend-item:nth-child(4n) {
+  margin-right: 0;
+}
+
+.brend-item img {
+  vertical-align: middle;
+}
+
+
+
+
+
+

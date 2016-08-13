@@ -11,41 +11,44 @@
   
   <body>
     <header>
-	  <div class="container">
+	  <div class="container clearfix">
 	    <div class="info-order-menu">
 		  <a class="technomart-logo" href="index.html">Техномарт</a>
-          <form class="info-order-form" name="info-buy" action="#" method="post" >
-            <label class="search-field" for="search"></label>
-            <input id="search" type="text" name="search-word">
+          <form class="info-order-form" name="info-order" action="#" method="post" >
+            <label for="search"><span class="icon-search"></span>Поиск:</label>
+            <input class="search-field" id="search" type="text" name="search-word">
 
-            <label class="bookmark-field" for="bookmark">Закладки:</label>
-            <input id="bookmark" type="text" name="bookmark-value">
+            <label for="bookmark"><span class="icon-bookmark"></span>Закладки:</label>
+            <input class="bookmark-field" id="bookmark" type="text" name="bookmark-value" value="0">
 
-            <label class="basket-field" for="basket">Корзина:</label>
-            <input id="basket" type="text" name="basket-value">
+            <label for="basket"><span class="icon-basket"></span>Корзина:</label>
+            <input class="basket-field" id="basket" type="text" name="basket-value" value="0">
 
             <button class="order-field" name="order" type="submit">Оформить заказ</button>
           </form>
 		</div>
 		
 		<div class="connection">
-		  <p class="connection-info">Интернет-магазин строительных материалов и инструментов для ремонта</p>
+		  <p class="connection-info">
+            Интернет-магазин строительных материалов<br>
+            и инструментов для ремонта
+          </p>
 		  <div class="connection-office">
-		    <p class="office-telephone">+8 (812) 555-05-55</p>
-		    <p class="offoce-address">г. Санкт-Петербкрг, ул. Б. Конюшенная, д. 19/8</p>
+		    <p class="phone"><span class="icon-phone"></span>+7 (812) 555-05-55</p>
+		    <p class="address">г. Санкт-Петербкрг, ул. Б. Конюшенная, д. 19/8</p>
 		  </div>
 		  
-		  <div class="connection-user">
-		    <a class="user-entry" href="#">Войти</a>
+		  <div class="connection-user clearfix">
+		    <a class="user-entry" href="#"><span class="icon-login"></span>Войти</a>
 		    <a class="user-registration" href="#">Регистрация</a>
 		  </div>
 		</div>
 		
-		<nav class="header-main-menu menu-block">
+		<nav class="header-main-menu">
 		  <ul>
-            <li><a>Главная</a></li>
+            <li><a href="index.html">Главная</a></li>
             <li><a href="#">Компания</a></li>
-            <li><a href="#">Каталог</a></li>
+            <li><a href="catalog.html">Каталог</a></li>
             <li><a href="#">Новости</a></li>
 			<li><a href="#">Спецпредложения</a></li>
 			<li><a href="#">Доставка</a></li>
@@ -56,6 +59,12 @@
 	</header>
 
 	<main class="container">
+	  <ul class="breadcrumbs">
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="#">Каталог</a></li>
+        <li><a href="#">Инструмент</a></li>
+        <li class="current"><a>Перфораторы</a></li>
+      </ul>
 	  <section class="inner-header">
         <ul class="breadcrumbs">
           <li><a href="index.html">Главная</a></li>
@@ -65,7 +74,8 @@
         </ul>
         <h1>Перфораторы</h1>
       </section>
-      
+       
+      <h1>Перфораторы</h1>
       <section class="catalog">
         <aside class="catalog-filter">
           <p>Фильтр:</p>
@@ -253,7 +263,7 @@
           </div>
         </div>
       </section>
-      
+       
       <section class="text-block">
         <h2>Пара слов о перфораторах</h2>
         <p>
@@ -265,7 +275,7 @@
           в одном устройстве будут совмещены отбойный молоток и ударная дрель.
         </p>
       </section>
-    </main>
+   </main>
 	
 	<footer class="container">
 	  <div class="footer-contacts-menu">
@@ -306,9 +316,9 @@
         </div>
         
         <div class="footer-social">
-          <a class="social-btn social-wk" href="#">wk</a>
-          <a class="social-btn social-fb" href="#">f</a>
-          <a class="social-btn social-insta" href="#">insta</a>
+          <a class="social-btn wk" href="#">wk</a>
+          <a class="social-btn fb" href="#">f</a>
+          <a class="social-btn insta" href="#">insta</a>
         </div>
         
         <div class="footer-link email">

@@ -2,7 +2,7 @@
 <html lang="ru">
   <head>
     <meta charset="utf-8">
-    <title>Техномарт Каталог</title>
+    <title>Техномарт Главная</title>
     <link href='https://fonts.googleapis.com/css?family=Cuprum:400,400italic,700,700italic&subset=cyrillic,latin' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="css/normalize.css">
@@ -11,37 +11,40 @@
   
   <body>
     <header>
-	  <div class="container">
+	  <div class="container clearfix">
 	    <div class="info-order-menu">
 		  <a class="technomart-logo">Техномарт</a>
-          <form class="info-order-form" name="info-buy" action="#" method="post" >
-            <label class="search-field" for="search"></label>
-            <input id="search" type="text" name="search-word">
+          <form class="info-order-form" name="info-order" action="#" method="post" >
+            <label for="search"><span class="icon-search"></span>Поиск:</label>
+            <input class="search-field" id="search" type="text" name="search-word">
 
-            <label class="bookmark-field" for="bookmark">Закладки:</label>
-            <input id="bookmark" type="text" name="bookmark-value">
+            <label for="bookmark"><span class="icon-bookmark"></span>Закладки:</label>
+            <input class="bookmark-field" id="bookmark" type="text" name="bookmark-value" value="0">
 
-            <label class="basket-field" for="basket">Корзина:</label>
-            <input id="basket" type="text" name="basket-value">
+            <label for="basket"><span class="icon-basket"></span>Корзина:</label>
+            <input class="basket-field" id="basket" type="text" name="basket-value" value="0">
 
             <button class="order-field" name="order" type="submit">Оформить заказ</button>
           </form>
 		</div>
 		
 		<div class="connection">
-		  <p class="connection-info">Интернет-магазин строительных материалов и инструментов для ремонта</p>
+		  <p class="connection-info">
+            Интернет-магазин строительных материалов<br>
+            и инструментов для ремонта
+          </p>
 		  <div class="connection-office">
-		    <p class="office-telephone">+8 (812) 555-05-55</p>
-		    <p class="offoce-address">г. Санкт-Петербкрг, ул. Б. Конюшенная, д. 19/8</p>
+		    <p class="phone"><span class="icon-phone"></span>+7 (812) 555-05-55</p>
+		    <p class="address">г. Санкт-Петербкрг, ул. Б. Конюшенная, д. 19/8</p>
 		  </div>
 		  
-		  <div class="connection-user">
-		    <a class="user-entry" href="#">Войти</a>
+		  <div class="connection-user clearfix">
+		    <a class="user-entry" href="#"><span class="icon-login"></span>Войти</a>
 		    <a class="user-registration" href="#">Регистрация</a>
 		  </div>
 		</div>
 		
-		<nav class="header-main-menu menu-block">
+		<nav class="header-main-menu">
 		  <ul>
             <li><a>Главная</a></li>
             <li><a href="#">Компания</a></li>
@@ -56,7 +59,22 @@
 	</header>
 
 	<main class="container">
-	  <section class="promo">
+	  <section class="promo clearfix">
+        <div class="promo-block promo-materials new">
+	      <p>Материалы</p>
+	      <a class="promo-btn" href="#">На любой вкус</a>
+	    </div>
+	  
+	    <div class="promo-block promo-instrument">
+	      <p>Инструмент</p>
+	      <a class="promo-btn" href="#">На все случаи</a>
+	    </div>
+	  
+	    <div class="promo-block promo-technics">
+	      <p>Техника</p>
+	      <a class="promo-btn" href="#">Для стройки</a>
+	    </div>
+        
         <div class="promo-slider">
 	      <div class="promo-slide-1">  <!--Изображение будет фоном-->
 		    <h2>Перфораторы</h2>
@@ -78,25 +96,10 @@
             <label for="promo-slide-2"></label>
           </div>
         </div>
-        
-        <div class="promo-block promo-materials new">
-	      <p>Материалы</p>
-	      <a class="promo-button" href="#">На любой вкус</a>
-	    </div>
-	  
-	    <div class="promo-block promo-instrument">
-	      <p>Инструмент</p>
-	      <a class="promo-button" href="#">На все случаи</a>
-	    </div>
-	  
-	    <div class="promo-block promo-technics">
-	      <p>Техника</p>
-	      <a class="promo-button" href="#">Для стройки</a>
-	    </div>
 	  
 	    <div class="promo-block promo-discount">
 	      <p>Скидки 50%</p>
-	      <a class="promo-button" href="#">На 350 товаров</a>
+	      <a class="promo-btn" href="#">На 350 товаров</a>
 	    </div>
 	  
 	    <div class="promo-block promo-delivery">
@@ -109,19 +112,19 @@
 	    <div class="popular-header">
 		  <h2>Популярные товары:</h2>
 		  <a class="main-btn" href="#">Все популярные товары</a>
+		  
 		</div>
 		
-		<div class="container">
-		  <div class="catalog-item">
-		    <img src="img/perforator-9000.jpg" width="184" height="164" alt="Перфоратор BOSCH BFG 9000">
-            <form class="buy-form" name="buy" action="#" method="post" >
-              <button class="inner-btn buy-btn" type="submit">Купить</button>
-              <button class="inner-btn bookmark-btn" type="submit">В закладки</button>
-            </form>
-			<p>Перфоратор Bosch BFG 9000</p>
-			<p class="catalog-old-price">32500 р.</p>
-			<p class="catalog-price">25500 р.</p>
-		  </div>
+		<div class="catalog-item">
+		  <img src="img/perforator-9000.jpg" width="184" height="164" alt="Перфоратор BOSCH BFG 9000">
+          <form class="buy-form" name="buy" action="#" method="post" >
+            <button class="inner-btn buy-btn" type="submit">Купить</button>
+            <button class="inner-btn bookmark-btn" type="submit">В закладки</button>
+          </form>
+		  <p>Перфоратор BOSCH BFG 9000</p>
+		  <p class="catalog-old-price">32500 р.</p>
+		  <p class="catalog-price">25500 р.</p>
+		 </div>
 		  
 		  <div class="catalog-item">
 		    <img src="img/perforator-3000.jpg" width="184" height="164" alt="Перфоратор BOSCH BFG 3000">
@@ -129,7 +132,7 @@
               <button class="inner-btn buy-btn" type="submit">Купить</button>
               <button class="inner-btn bookmark-btn" type="submit">В закладки</button>
             </form>
-			<p>Перфоратор Bosch BFG 3000</p>
+			<p>Перфоратор BOSCH BFG 3000</p>
 			<p class="catalog-old-price">22500 р.</p>
 			<p class="catalog-price">15500 р.</p>
 		  </div>
@@ -140,7 +143,7 @@
               <button class="inner-btn buy-btn" type="submit">Купить</button>
               <button class="inner-btn bookmark-btn" type="submit">В закладки</button>
             </form>
-			<p>Перфоратор Bosch BFG 6000</p>
+			<p>Перфоратор BOSCH BFG 6000</p>
 			<p class="catalog-old-price">30500 р.</p>
 			<p class="catalog-price">25500 р.</p>
 		  </div>
@@ -151,10 +154,10 @@
               <button class="inner-btn buy-btn" type="submit">Купить</button>
               <button class="inner-btn bookmark-btn" type="submit">В закладки</button>
             </form>
-			<p>Перфоратор Bosch BFG 2000</p>
+			<p>Перфоратор BOSCH BFG 2000</p>
 			<p class="catalog-old-price"></p>
 			<p class="catalog-price">12500 р.</p>
-		  </div>
+		  </div>		  	   		  
 		</div>
 	  </section>
 	  
