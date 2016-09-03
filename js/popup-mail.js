@@ -1,47 +1,47 @@
-  var mail = document.querySelector(".mail-btn")
-  var popup = document.querySelector(".modal-mail")
-  var close = popup.querySelector(".modal-close")
-  var form = popup.querySelector("form")
-  var btnSubmit = popup.querySelector(".submit-btn")
-  var login = popup.querySelector("[name=user-name]")
-  var userMail = popup.querySelector("[name=user-email]")
+  var mailOpen = document.querySelector(".mail-btn")
+  var mailPopup = document.querySelector(".modal-mail")
+  var mailClose = mailPopup.querySelector(".modal-close")
+  var mailSubmit = mailPopup.querySelector(".submit-btn")
+  var userName = mailPopup.querySelector("[name=user-name]")
+  var userMail = mailPopup.querySelector("[name=user-email]")
   var storageLogin = localStorage.getItem("user-name")
   var storageMail = localStorage.getItem("user-email")
-  
-	  
-  mail.addEventListener("click", function(event) {
+  	  
+  mailOpen.addEventListener("click", function(event) {
     event.preventDefault();
-    popup.classList.add("modal-show");
-    login.focus();
+    mailPopup.classList.add("modal-show");
+    userName.focus();
   });
 	  
-  close.addEventListener("click", function(event) {
+  mailClose.addEventListener("click", function(event) {
     event.preventDefault();
-    popup.classList.remove("modal-show");
-    login.classList.remove("modal-error");
+    mailPopup.classList.remove("modal-show");
+    userName.classList.remove("modal-error");
+	userMail.classList.remove("modal-error");
   });
 	  
   window.addEventListener("keydown", function(event) {
     if (event.keyCode === 27) {
-     if (popup.classList.contains("modal-show")) {
-       popup.classList.remove("modal-show");
-	   login.classList.remove("modal-error");
+     if (mailPopup.classList.contains("modal-show")) {
+       mailPopup.classList.remove("modal-show");
+	   userName.classList.remove("modal-error");
+	   userMail.classList.remove("modal-error");
      }
     }
   });
 	  
-  btnSubmit.addEventListener("click", function(event) {
-    if (login.classList.contains("modal-error")) {
-        login.classList.remove("modal-error");
+  mailSubmit.addEventListener("click", function(event) {
+    if (userName.classList.contains("modal-error")) {
+        userName.classList.remove("modal-error");
 	}
 	if (userMail.classList.contains("modal-error")) {
         userMail.classList.remove("modal-error");
 	}
-	if (!login.value) {
+	if (!userName.value) {
       event.preventDefault();
-      login.classList.add("modal-error");
+      userName.classList.add("modal-error");
     } else {
-        localStorage.setItem("user-name", login.value);
+        localStorage.setItem("user-name", userName.value);
 	}
 	if (!userMail.value) {
       event.preventDefault();

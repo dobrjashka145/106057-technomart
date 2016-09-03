@@ -106,7 +106,7 @@ h2 {
   right: -25px;
   width: 90px;
   height: 30px;
-  z-index: 100;
+  z-index: 30;
   font-family: "Cuprum", "Arial", sans-serif;
   font-weight: 400;
   font-size: 13px;
@@ -195,7 +195,7 @@ header {
   
 }
 
-.info-order-form input:[type="search"]:-webkit-input-placeholder {
+.info-order-form input[type="search"]::-webkit-input-placeholder {
   color: #ffffff;
 }
 .info-order-form input[type="search"]::-moz-placeholder {
@@ -356,7 +356,7 @@ header {
   display: inline-block;
   vertical-align: middle;
   font-size: 17px;
-  line-heigh: 17px;
+  line-height: 17px;
 }
 
 .header-main-menu a {
@@ -666,6 +666,7 @@ header {
 }
 
 .catalog-item .buy-form {
+  display: none;
   position: absolute;
   top: 0;
   left: 0;
@@ -708,8 +709,14 @@ header {
   opacity: 0.3;
 }
 
-.catalog-item .buy-form {
-  display: none;	
+.catalog-item .buy-btn a {
+  font-family: "Cuprum", "Arial", sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+  color: #ffffff;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
 }
 
 .catalog-item:hover {
@@ -735,6 +742,8 @@ header {
 .catalog-item .buy-btn:active span {
   opacity: 1;
 }
+
+
 
 .catalog-item .bookmark-btn:hover {
   border-color: #32425c;  
@@ -1669,6 +1678,7 @@ header {
   100% {border-color: #ee3643; box-shadow: none;}
 }
 
+/*Всплывающая интерактивная карта (раздел .info-contacts)*/
 .modal-map {
   display: none;
   position: absolute;
@@ -1683,15 +1693,16 @@ header {
   box-shadow: 0 0 16px rgba(0, 0, 0, 0.5);	
 }
 
+/*Всплывающее окно отправки email (раздел .info-contacts)*/
 .modal-mail {
   display: none;
-  position: absolute;
-  top: 205px;
+  position: fixed;
+  top: 50%;
   left: 50%;
   z-index: 50;
   width: 620px;
+  margin-top: -205px;
   margin-left: -310px;
-  
   background: #ffffff;
   border-top: 7px solid #ee3643;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.75);
@@ -1741,7 +1752,7 @@ header {
 .mail-submit {
   padding-top: 46px;
   padding-bottom: 40px;
-  background-color: #e5e5e5;	
+  background-color: #f1f1f1;	
 }
 
 .submit-btn {
@@ -1751,12 +1762,66 @@ header {
   border: none;	
 }
 
+/*Всплывающее окно добавления в корзину (карточка товара)*/
+.modal-basket {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 50;
+  width: 620px;
+  margin-top: -160px;
+  margin-left: -310px;
+  background: #ffffff;
+  border-top: 7px solid #ee3643;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.75);	
+}
+
+.modal-basket p {
+  padding: 70px 0;
+  padding-left: 60px;
+  font-family: "Cuprum", "Arial", sans-serif;
+  font-weight: 400;
+  font-size: 30px;
+  color: #000000; 
+  background: url("../img/check-basket.png") 80px 50% no-repeat #ffffff;	
+}
+
+.modal-basket-btn {
+  padding: 40px 80px;
+  background-color: #f1f1f1;
+}
+
+.basket-btn-1,
+.basket-btn-2 {
+  width: 220px;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.basket-btn-1 {
+  float: left;
+  border: none;	
+}
+.basket-btn-2 {
+  float: right;
+  color: #000000;
+  background-color: #ffffff;
+  border: none;
+  	
+}
+
+/*Общие классы для всплывающих окон*/
 .modal-show {
   display: block;
   -webkit-animation: increace 0.6s;
           animation: increace 0.6s;
   -webkit-animation-timing-function: ease-in-out;
           animation-timing-function: ease-in-out;	
+}
+
+.modal-show-basket {
+  display: block;	
 }
 
 .modal-close {
